@@ -1,0 +1,26 @@
+# CI vs CD
+
+CI/CD is a DevOps practice that automates the process of integrating, testing, delivering, and deploying software.
+
+---
+
+## CI — Continuous Integration
+
+Continuous Integration is the practice of frequently merging code changes into a shared repository and automatically validating those changes.
+
+### CI Process
+
+```text
+Developer
+    ↓
+Git Push
+    ↓
+Source Code Repository
+    ↓
+Build
+    ↓
+Automated Tests
+    ↓
+Code Quality Checks
+    ↓
+Security Checks
