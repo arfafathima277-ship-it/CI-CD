@@ -1,0 +1,148 @@
+AWS CodePipeline
+
+What is AWS CodePipeline?
+
+AWS CodePipeline is a fully managed continuous delivery service that automates the stages required to release software.
+
+It orchestrates different CI/CD services.
+
+Typical Pipeline
+
+Source
+  ↓
+Build
+  ↓
+Test
+  ↓
+Deploy
+
+Example AWS pipeline:
+
+CodeCommit
+    ↓
+CodeBuild
+    ↓
+CodeDeploy
+    ↓
+EC2
+
+Main Components
+
+Source Stage
+
+Gets the latest source code.
+
+Examples:
+
+- AWS CodeCommit
+- GitHub
+- Amazon S3
+
+Build Stage
+
+Builds and tests the application.
+
+Example:
+
+- AWS CodeBuild
+
+Deploy Stage
+
+Deploys the application.
+
+Examples:
+
+- AWS CodeDeploy
+- Amazon ECS
+- AWS Elastic Beanstalk
+
+Approval Stage
+
+Can require manual approval before production deployment.
+
+Build
+ ↓
+Test
+ ↓
+Manual Approval
+ ↓
+Production
+
+CodePipeline Execution
+
+When a new change is detected:
+
+Developer Push
+      ↓
+Source Stage
+      ↓
+Build Stage
+      ↓
+Test
+      ↓
+Approval
+      ↓
+Deploy
+      ↓
+Production
+
+CodePipeline Benefits
+
+- Automates software release process
+- Connects different AWS services
+- Supports third-party tools
+- Provides continuous delivery
+- Reduces manual deployment steps
+- Improves release consistency
+
+Example End-to-End AWS CI/CD Architecture
+
+              Developer
+                  |
+                  ↓
+            AWS CodeCommit
+                  |
+                  ↓
+            AWS CodePipeline
+                  |
+                  ↓
+            AWS CodeBuild
+                  |
+                  ↓
+          Build + Automated Tests
+                  |
+                  ↓
+            Build Artifact
+                  |
+                  ↓
+            AWS CodeDeploy
+                  |
+                  ↓
+              EC2 Server
+                  |
+                  ↓
+             Application
+
+Important Interview Point
+
+CodePipeline is the orchestrator.
+
+It coordinates the different stages but does not replace CodeCommit, CodeBuild, or CodeDeploy.
+
+AWS CI/CD Services
+
+Service| Main Responsibility
+CodeCommit| Source code management
+CodeBuild| Build and test
+CodeDeploy| Application deployment
+CodePipeline| Pipeline orchestration
+
+Easy Way to Remember
+
+Commit → Build → Deploy
+   ↑       ↑       ↑
+CodeCommit CodeBuild CodeDeploy
+
+             ↓
+        CodePipeline
+        (Orchestrates)
